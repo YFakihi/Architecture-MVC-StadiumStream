@@ -3,7 +3,6 @@
 function connect()
 {
     return new PDO('mysql:dbname=POO_PHP;host=localhost', 'root', '');
-
 }
 
 function list_user()
