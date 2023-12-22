@@ -1,11 +1,5 @@
-
-
 <?php
 include_once'../views/layout.php';
-
-
-
-
 ?>
 
 <table class="table">
@@ -25,7 +19,7 @@ include_once'../views/layout.php';
                 <td><?= $user->id ?></td>
                 <td><?= $user->mame ?></td> 
                 <td> <a href="product/delete" class="btn btn-danger" >delete</a>
-                 <a href="product/edit" class="btn btn-warning" >update</a>
+                <a href="product/edit?id=<?= $user->id ?>" class="btn btn-warning">update</a>
             </td>
             </tr>
           
