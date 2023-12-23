@@ -1,0 +1,15 @@
+{
+    "name": "youcode/architecture-mvc-stadium-stream",
+    "autoload": {
+        "psr-4": {
+            "Youcode\\ArchitectureMvcStadiumStream\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "yfakihi",
+            "email": "fakihiyassin01@gmail.com"
+        }
+    ],
+    "require": {}
+}
