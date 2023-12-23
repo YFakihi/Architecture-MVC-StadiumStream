@@ -18,9 +18,10 @@ include_once'../views/layout.php';
             <tr>
                 <td><?= $user->id ?></td>
                 <td><?= $user->mame ?></td> 
-                <td> <a href="product/delete" class="btn btn-danger" >delete</a>
+                <td> 
                 <a href="product/edit?id=<?= $user->id ?>" class="btn btn-warning">update</a>
-            </td>
+                <a href="deleteUser.php?id=<?= $user->id ?>" class="btn btn-danger">delete</a>
+                </td>
             </tr>
           
         <?php endforeach; ?>

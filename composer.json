@@ -2,7 +2,7 @@
     "name": "youcode/architecture-mvc-stadium-stream",
     "autoload": {
         "psr-4": {
-            "Youcode\\ArchitectureMvcStadiumStream\\": "src/"
+            "App\\": "app/"
         }
     },
     "authors": [
