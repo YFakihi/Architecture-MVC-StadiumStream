@@ -19,4 +19,47 @@ class UserModel extends Connection
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
+    public function insertUser($data)
+    {
+        $conn = Connection::getConn();
+    
+      
+        $placeholders = implode(', ', array_fill(0, count($data), '?'));
+        $stmt = $conn->prepare("INSERT INTO `user` (mame) VALUES ($placeholders)");
+    
+       
+        foreach ($data as $index => $value) {
+            $stmt->bindValue(($index + 1), $value);  
+        }
+    
+      
+        $success = $stmt->execute();
+    
+      
+        if ($success) {
+            return true; 
+        } else {
+         
+            return false; 
+        }
+    }
+    public function deleteUser($id)
+{  
+     //for change string to integer
+    $conn = Connection::getConn();
+    $stmt = $conn->prepare("DELETE FROM `user` WHERE id = :id");
+    
+    
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    
+    $success = $stmt->execute();
+    
+    if ($success) {
+        return true; 
+    } else {
+       
+        return false; 
+    }
+}
+
 }

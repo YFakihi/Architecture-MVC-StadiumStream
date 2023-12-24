@@ -15,12 +15,33 @@ class UserController
     public function index()
     {
         $users = $this->userModel->getUsers();
-        require(__DIR__.'/../../views/list_user.php');
+        require('../app/views/list_user.php');
     }
-    function adduser(){
-        require(__DIR__.'/../../views/adduser.php');
+    function adduser()
+    {
+        require('../app/views/views/adduser.php');
     }
-    function insert(){
+    function insert()
+    {
+        if ($_SERVER['REQUEST_METHOD']) {
+            $name = $_POST["name"];
+            $res = $this->userModel->insertUser(array($name));
+            if ($res) {
+                header("Location:../");
+                exit;
+            } else
+                echo "something is wrong";
+        }
+    }
+    function delete($id)
+    {
+       $id+=0; //for change from string to int
         
+        $res = $this->userModel->deleteUser($id);
+        if ($res) {
+            header("Location:../../");
+            exit;
+        } else
+            echo "something is wrong";
     }
 }

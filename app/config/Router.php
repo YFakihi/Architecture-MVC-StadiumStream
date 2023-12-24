@@ -16,16 +16,19 @@ class Router
     public function route()
     {
         $uri = $_SERVER['REQUEST_URI'];
+        
+       
         $uri = explode('/', trim(strtolower($uri), '/'));
-        array_splice($uri,0,2);
+        $a = array_splice($uri, 0, 1);
         if (isset($uri[0])) {
             $controllerName = ucwords($uri[0]) . 'Controller';
             $controller = 'App\Controllers\\' . $controllerName;
-
+            unset($uri[0]);
             if (class_exists($controller)) {
                 $this->controller = $controller;
             } else {
-                require '../../views/404/404.php';
+                // require '../views/404/404.php';
+                echo'invalid';
             }
         }
 
@@ -37,7 +40,7 @@ class Router
         }
 
         if (isset($uri[2])) {
-            $this->param = array_slice($uri, 2);
+            $this->param = $uri;
         }
 
         call_user_func_array([$class, $this->method], $this->param);

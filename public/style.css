@@ -1,0 +1,12 @@
+.custom-form {
+    background-color: #f5f5f5; /* Set your desired background color */
+    border: 1px solid #ccc; /* Define border properties */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a shadow */
+    max-width: 400px; /* Define the maximum width of the form */
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 20px; /* Add padding for better spacing */
+}
+
+.custom-form .form-group {
+    margin-bottom: 20px; /* Add space between form elements */
+}
