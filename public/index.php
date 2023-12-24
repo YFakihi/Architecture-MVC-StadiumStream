@@ -1,19 +1,25 @@
 <?php
-    session_start();
-    require_once __DIR__ . '/../vendor/autoload.php';
+    
+    require_once  '../vendor/autoload.php';
 
-    use App\Controllers\UserController;
+//     use App\Controllers\UserController;
+    
+// use App\Config\Router;
+
+
+
+//     $userController = new UserController();
    
 
-    $userController = new UserController();
-   
-
-    $route = isset($_GET['route']) ? $_GET['route'] : 'home';
-    // var_dump($route);
-    switch ($route) {
+//     $route = isset($_GET['route']) ? $_GET['route'] : 'home';
+//     // var_dump($route);
+//     switch ($route) {
 
 
-        case 'home':
-            $userController->index();
-            break;
-        }
+//         case 'home':
+//             $userController->index();
+//             break;
+//         }
+
+require '../app/config/Router.php';
+$a = new Router();

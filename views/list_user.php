@@ -1,10 +1,12 @@
 <?php
 include_once'../views/layout.php';
+include_once'../views/adduser.php';
+
 ?>
 
 <table class="table">
     <div class="d-flex justify-content-end p-2">
-        <a href="#" class="btn btn-primary">add</a>
+        <a href="user/adduser" class="btn btn-primary">add</a>
     </div>
     <thead>
         <tr>
@@ -16,11 +18,11 @@ include_once'../views/layout.php';
     <tbody>
         <?php foreach ($users as $user): ?>
             <tr>
-                <td><?= $user->id ?></td>
-                <td><?= $user->mame ?></td> 
+            <td><?= $user['id'] ?></td>
+            <td><?= $user['mame'] ?></td>
                 <td> 
-                <a href="product/edit?id=<?= $user->id ?>" class="btn btn-warning">update</a>
-                <a href="deleteUser.php?id=<?= $user->id ?>" class="btn btn-danger">delete</a>
+                <a href="product/edit" class="btn btn-warning">update</a>
+                <a href="deleteUser.php>" class="btn btn-danger">delete</a>
                 </td>
             </tr>
           

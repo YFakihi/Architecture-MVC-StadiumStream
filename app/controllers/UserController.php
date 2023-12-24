@@ -17,4 +17,10 @@ class UserController
         $users = $this->userModel->getUsers();
         require(__DIR__.'/../../views/list_user.php');
     }
+    function adduser(){
+        require(__DIR__.'/../../views/adduser.php');
+    }
+    function insert(){
+        
+    }
 }
