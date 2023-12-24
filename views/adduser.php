@@ -9,14 +9,14 @@
 </head>
 <body>
     
-<form  method="post" action="./insert"   >
+<!-- <form  method="post" action="./insert"   >
   <div class="form-group">
-    <label for="exampleFormControlInput1">Email address</label>
+    <label for="exampleFormControlInput1">Name</label>
     <input type="test" class="form-control" name="name" id="exampleFormControlInput1" placeholder=" enter name">
   </div>
  
   
   <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+</form> -->
 </body>
 </html>
