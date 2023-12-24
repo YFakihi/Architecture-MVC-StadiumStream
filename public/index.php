@@ -1,21 +1,19 @@
-
 <?php
-   
-   require_once __DIR__ . '/../vendor/autoload.php';
-use App\controllers\UserController;
-    $userController = new UserController();
+    session_start();
+    require_once __DIR__ . '/../vendor/autoload.php';
 
-    $route = isset($_GET['route']) ? $_GET['route'] : 'getuser';
-    //var_dump($route);
+    use App\Controllers\UserController;
+   
+
+    $userController = new UserController();
+   
+
+    $route = isset($_GET['route']) ? $_GET['route'] : 'home';
+    // var_dump($route);
     switch ($route) {
 
 
-        case 'layout':
-            $UserController->userintrface();
+        case 'home':
+            $userController->index();
             break;
-            case 'getuser':
-                $UserController->index();
-                break;
-
-
         }

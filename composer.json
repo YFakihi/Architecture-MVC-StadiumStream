@@ -1,5 +1,5 @@
 {
-    "name": "youcode/architecture-mvc-stadium-stream",
+    "name": "hp/architecture-mvc-stadium-stream",
     "autoload": {
         "psr-4": {
             "App\\": "app/"
@@ -7,8 +7,8 @@
     },
     "authors": [
         {
-            "name": "yfakihi",
-            "email": "fakihiyassin01@gmail.com"
+            "name": "aicha",
+            "email": "aicha70tabite@gmail.com"
         }
     ],
     "require": {}

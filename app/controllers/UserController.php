@@ -1,32 +1,20 @@
 <?php
 
+namespace App\Controllers;
 
-namespace App\controllers;
-use App\models\UserModel;
-class UserController{
+use App\Models\UserModel;
 
+class UserController
+{
     private $userModel;
 
     public function __construct()
     {
-        $this->userModel = new  userModel;
+        $this->userModel = new UserModel();
     }
-
-public function userintrface(){
-
-    require_once __DIR__.'/../../views/layout.php=';
-    
-}
-
-
-
-    public function indesx() {
-        // $userList = new UserModel();
-
-        $users = $this->userModel->listUsers(); 
-        require_once __DIR__ . '/../../views/list_user.php';
-       
+    public function index()
+    {
+        $users = $this->userModel->getUsers();
+        require(__DIR__.'/../../views/list_user.php');
     }
-     
-
 }
