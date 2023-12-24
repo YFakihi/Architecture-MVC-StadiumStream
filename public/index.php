@@ -1,6 +1,21 @@
+
 <?php
+   
+   require_once __DIR__ . '/../vendor/autoload.php';
+use App\controllers\UserController;
+    $userController = new UserController();
 
-define("ROOT_PATH", dirname(__DIR__));
-require_once(ROOT_PATH . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'core' . DIRECTORY_SEPARATOR . 'Router.php');
-new Router();
+    $route = isset($_GET['route']) ? $_GET['route'] : 'getuser';
+    //var_dump($route);
+    switch ($route) {
 
+
+        case 'layout':
+            $UserController->userintrface();
+            break;
+            case 'getuser':
+                $UserController->index();
+                break;
+
+
+        }

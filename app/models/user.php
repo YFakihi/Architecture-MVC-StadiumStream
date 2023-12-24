@@ -1,6 +1,7 @@
 <?php
-/*
-class UserList {
+namespace App\models;
+use PDO;
+class UserModel {
      private $pdo;
 
     public function __construct() {
@@ -13,4 +14,3 @@ class UserList {
         
     }
 }
-*/
