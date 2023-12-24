@@ -1,4 +1,5 @@
 <?php
+/*
 class UserList {
      private $pdo;
 
@@ -12,3 +13,4 @@ class UserList {
         
     }
 }
+*/

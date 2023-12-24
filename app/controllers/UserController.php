@@ -1,4 +1,5 @@
 <?php
+/*
 require '../app/models/User.php';
 
 function listusers() {
@@ -7,4 +8,6 @@ function listusers() {
 
     
     require_once '../views/list_user.php';
+   
 }
+ */

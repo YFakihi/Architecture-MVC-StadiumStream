@@ -1,7 +1,8 @@
+
 <?php
 class Router
 {
-    private $controller = 'App\Controllers\TeamController';
+    private $controller = 'App\Controllers\UserController';
     private $method = 'index';
     private $param = array();
 
@@ -13,7 +14,7 @@ class Router
     public function abort($code = 404)
     {
         http_response_code($code);
-        require "../app/Views/404/{$code}.php";
+        require __DIR__ . '/../../Views/404/template_01.php';
         die();
     }
 
@@ -21,6 +22,8 @@ class Router
     {
         $uri = $_SERVER['REQUEST_URI'];
         $uri = explode('/', trim(strtolower($uri), '/'));
+        // var_dump($uri);
+        echo $uri[1];
         
         if (isset($uri[0])) {
             $controllerName = ucwords($uri[0]) . 'Controller';
