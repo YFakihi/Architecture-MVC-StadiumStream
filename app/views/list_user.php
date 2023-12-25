@@ -4,16 +4,17 @@
 
 include_once'../app/views/nav.php';
 include_once'../app/views/layout.php';
-include_once'../app/views/adduser.php';
+// include_once'../app/views/user/adduser.php';
 
 
 
 ?>
-
+<div class="d-flex justify-content-center mt-4">
+    <a href="user/adduser" class="  btn btn-primary">Add users</a>
+ 
+</div>
 <table class="table">
-    <div class="d-flex justify-content-end p-2">
-        <!-- <a href="user/adduser" class="btn btn-primary">add</a> -->
-    </div>
+ 
     <h2>All Users</h2>
     <thead>
         <tr>
@@ -28,7 +29,9 @@ include_once'../app/views/adduser.php';
             <td><?= $user['id'] ?></td>
             <td><?= $user['mame'] ?></td>
                 <td> 
-                <a href="user/edit/<?=$user['id']?>" class="btn btn-warning">update</a>
+                <a href="user/edituser/<?= $user['id'] ?>" class="btn btn-warning">update</a>
+
+
                 <a href="user/delete/<?=$user['id']?>" class="btn btn-danger">delete</a>
                 </td>
             </tr>

@@ -19,7 +19,7 @@ class UserController
     }
     function adduser()
     {
-        require('../app/views/views/adduser.php');
+        require('../app/views/adduser.php');
     }
     function insert()
     {
@@ -27,12 +27,40 @@ class UserController
             $name = $_POST["name"];
             $res = $this->userModel->insertUser(array($name));
             if ($res) {
-                header("Location:../");
+                header("Location:..");
                 exit;
             } else
                 echo "something is wrong";
         }
     }
+
+    function edituser($id)
+    {
+        $user = $this->userModel->getUserById($id);
+        require('../app/views/edituser.php');
+    }
+
+    public function updateuser($userId) {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+          
+            $updatedData = [
+                'name' => $_POST['name'],
+              
+            ];
+
+            $success = $this->userModel->updateUser($userId, $updatedData);
+
+            if ($success) {
+           
+                header('Location: /users'); 
+                exit();
+            } else {
+                echo "Update failed.";
+            }
+        }
+    }
+
+
     function delete($id)
     {
        $id+=0; //for change from string to int

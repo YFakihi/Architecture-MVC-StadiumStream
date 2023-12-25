@@ -19,7 +19,7 @@ class UserModel extends Connection
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
-    public function insertUser($data)
+    public function insertUser($data)   
     {
         $conn = Connection::getConn();
     
@@ -43,6 +43,26 @@ class UserModel extends Connection
             return false; 
         }
     }
+
+   
+    public function getUserById($id) {
+        $conn = Connection::getConn();
+        $query = $conn->prepare("SELECT * FROM user WHERE id = :id");
+        $query->execute(['id' => $id]);
+        return $query->fetch();
+    }
+
+
+
+    public function updateUser($userId, $userData) {
+        $conn = Connection::getConn();
+        $query = $conn->prepare("UPDATE user SET mame = :name WHERE id = :id");
+        return $query->execute(['name' => $userData['name'], 'id' => $userId]);
+    }
+
+
+
+
     public function deleteUser($id)
 {  
      //for change string to integer
