@@ -35,24 +35,25 @@ class UserController
     }
 
     function edituser($id)
-    {
+    {   $userId=$id;
         $user = $this->userModel->getUserById($id);
         require('../app/views/edituser.php');
     }
 
-    public function updateuser($userId) {
+    public function updateuser() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           
             $updatedData = [
                 'name' => $_POST['name'],
+                
               
             ];
-
+            $userId= $_POST["id"];
             $success = $this->userModel->updateUser($userId, $updatedData);
 
             if ($success) {
            
-                header('Location: /users'); 
+                header("Location:..");
                 exit();
             } else {
                 echo "Update failed.";

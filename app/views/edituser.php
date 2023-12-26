@@ -13,7 +13,7 @@ include_once'../app/views/nav.php';
 <body>
     
 
-<form  method="post" action="./updateuser"  class="bg-info p-4 rounded" >
+<form  method="post" action="../updateuser"  class="bg-info p-4 rounded" >
   <div class="form-group">
 <h3 class="container">edit Users :</h3>    
 
@@ -23,7 +23,7 @@ include_once'../app/views/nav.php';
             <label for="exampleFormControlInput1">Name</label>
             <!-- <input type="text" class="form-control"value = " <?= $user['mame'] ?>" name="name" id="exampleFormControlInput1" > -->
             <input type="text" class="form-control" value="<?= isset($user['mame']) ? $user['mame'] : '' ?>" name="name" id="exampleFormControlInput1">
-
+               <input type="hidden"  name="id" value="<?= $userId ?>" >
         </div>
 
         <button type="submit" class="container mt-4 btn btn-primary">Submit</button>
